@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { styles } from "../styles";
 
 import EmailForm from "./EmailForm";
+import ChatEngine from "./ChatEngine";
 
 const SupportWindow = props => {
     const [user, setUser] = useState(null)
@@ -22,10 +23,11 @@ const SupportWindow = props => {
                 setChat={chat => setChat(chat)} 
             />
 
-            {
-                user !== null && chat !== null &&
-                <div>Chat Engine</div>
-            }
+            <ChatEngine 
+                visible={user !== null && chat !== null}
+                user={user} 
+                chat={chat} 
+            />
         </div>
     )
 }
