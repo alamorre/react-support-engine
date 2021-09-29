@@ -7,8 +7,9 @@ import './index.css';
 const Home = () => {
   return (
     <div>
-      <SupportEngine />
-      <div dangerouslySetInnerHTML={{ __html: htmlCode }} ></div>
+        <div dangerouslySetInnerHTML={{ __html: htmlCode }} ></div>
+
+        <SupportEngine />
     </div>
   );
 }
