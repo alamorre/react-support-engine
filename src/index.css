@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-family: Avenir !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ce-my-message-bubble {
+  background-color: #7a39e0 !important;
+}
+
+.ce-chat-title-text {
+  color: #7a39e0 !important;
+}
+
+.ce-chat-subtitle-text {
+  color: #7a39e0 !important;
+  font-weight: 600;
+}
+
+#ce-send-message-button {
+  position: relative !important;
+  bottom: 2px !important;
+  left: 1px !important;
+  background-color: #7a39e0 !important;
+}
+
+.ce-my-message-timestamp {
+  color: #7a39e0 !important;
+}
+
+.transition-3 {
+  transition: all 0.33s ease;
+  -webkit-transition: all 0.33s ease;
+  -moz-transition: all 0.33s ease;
+}
+
+.transition-5 {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
 }
