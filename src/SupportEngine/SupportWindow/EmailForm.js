@@ -2,6 +2,8 @@ import React, { useState } from "react"
 
 import { styles } from "../styles"
 
+import axios from 'axios'
+
 import { LoadingOutlined } from '@ant-design/icons'
 
 import Avatar from '../Avatar'
@@ -10,10 +12,45 @@ const EmailForm = props => {
     const [email, setEmail] = useState('')
     const [loading, setLoading] = useState(false)
 
+    function getOrCreateUser(callback) {
+        axios.put(
+            'https://api.chatengine.io/users/',
+            {username: email, email: email, secret: email},
+            {headers: {"Private-Key": process.env.REACT_APP_CE_PRIVATE_KEY}}
+        )
+        .then(r => callback(r.data))
+        .catch(e => console.log('Get or create user error', e))
+    }
+
+    function getOrCreateChat(callback) {
+        axios.put(
+            'https://api.chatengine.io/chats/',
+            {usernames: [email, 'Adam La Morre'], is_direct_chat: true},
+            {headers: {
+                "Project-ID": process.env.REACT_APP_CE_PROJECT_ID,
+                "User-Name": email,
+                "User-Secret": email,
+            }}
+        )
+        .then(r => callback(r.data))
+        .catch(e => console.log('Get or create chat error', e))
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
         setLoading(true)
+
         console.log('Sending Email', email)
+
+        getOrCreateUser(
+            user => {
+                props.setUser && props.setUser(user)
+                getOrCreateChat(chat => {
+                    setLoading(false)
+                    props.setChat && props.setChat(chat)
+                })
+            }
+        )
     }
 
     return (
@@ -21,8 +58,8 @@ const EmailForm = props => {
             style={{
                 ...styles.emailFormWindow,
                 ...{ 
-                    height: '100%',
-                    opacity: '1',
+                    height: props.visible ? '100%' : '0px',
+                    opacity: props.visible ? '1' : '0'
                 }
             }}
         >
