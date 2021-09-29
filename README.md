@@ -1,5 +1,7 @@
 # React Support Engine
 
+![Support Engine Demo Gif](https://chat-engine-assets.s3.amazonaws.com/tutorials/react-support-engine/demo-min.gif)
+
 This project is powered by [Chat Engine](https://chatengine.io).
 
 ## Setup
