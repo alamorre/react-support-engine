@@ -2,7 +2,7 @@
 
 <img 
     src="https://chat-engine-assets.s3.amazonaws.com/tutorials/react-support-engine/support-engine-demo.gif" 
-    width="60%" 
+    width="75%" 
     height="100%"
 />
 
