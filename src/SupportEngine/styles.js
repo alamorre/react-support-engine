@@ -46,9 +46,8 @@ export const styles = {
         // Shadow
         boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.33)',
     },
-    supportWindow: { 
+    emailFormWindow: { 
         width: '100%',  
-        backgroundColor: 'wheats',
         overflow: 'hidden',
         transition: "all 0.5s ease",
         WebkitTransition: "all 0.5s ease",
