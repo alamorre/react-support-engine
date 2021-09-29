@@ -1,6 +1,10 @@
 # React Support Engine
 
-![Support Engine Demo Gif](https://chat-engine-assets.s3.amazonaws.com/tutorials/react-support-engine/support-engine-demo.gif)
+<img 
+    src="https://chat-engine-assets.s3.amazonaws.com/tutorials/react-support-engine/support-engine-demo.gif" 
+    width="60%" 
+    height="100%"
+/>
 
 This project is powered by [Chat Engine](https://chatengine.io).
 
